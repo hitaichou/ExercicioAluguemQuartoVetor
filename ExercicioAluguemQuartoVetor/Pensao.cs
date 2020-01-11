@@ -8,6 +8,19 @@ namespace ExercicioAluguemQuartoVetor
     {
         public string Nome { get; set; }
         public string Email { get; set; }
-        public int Quarto { get; set; }
+        //public int Quarto { get; set; }
+
+        //construtor
+        public Pensao(string nome, string email)
+        {
+            Nome = nome;
+            Email = email;
+        }
+
+        //Sobreposição
+        public override string ToString()
+        {
+            return Nome + ", " + Email;
+        }
     }
 }

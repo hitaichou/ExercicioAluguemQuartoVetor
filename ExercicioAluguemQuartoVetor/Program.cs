@@ -10,9 +10,12 @@ namespace ExercicioAluguemQuartoVetor
             int n = int.Parse(Console.ReadLine());
 
             //Declaração da variável vetor do tipo Pensão            
-            Pensao[] vet = new Pensao[n];
+            //Pensao[] vet = new Pensao[n];
 
-            for(int i = 0; i < n; i++)
+            //Correção do professor, criando um vetor com 10 posições
+            Pensao[] vet = new Pensao[10];
+
+            for (int i = 0; i < n; i++)
             {
                 Console.Write("Entre com o nome do cliente: ");
                 string nome = Console.ReadLine();
@@ -21,7 +24,8 @@ namespace ExercicioAluguemQuartoVetor
                 Console.Write("Quarto: ");
                 int quarto = int.Parse(Console.ReadLine());
 
-                vet[i] = new Pensao { Nome = nome, Email = email, Quarto = quarto };
+                //vet[i] = new Pensao { Nome = nome, Email = email, Quarto = quarto };
+                vet[quarto] = new Pensao(nome, email); //passando para o construtor da classe somente os atributos necessários
             }
 
             Console.WriteLine("Quartos ocupados:");
@@ -29,12 +33,10 @@ namespace ExercicioAluguemQuartoVetor
             {                
                 if (vet[i] != null)
                 {
-                    Console.WriteLine(vet[i].Quarto + ": " + vet[i].Nome + ", " + vet[i].Email);
+                    //Console.WriteLine(vet[i].Quarto + ": " + vet[i].Nome + ", " + vet[i].Email);
+                    Console.WriteLine(i + ": " + vet[i]);
                 }
             }
-
-
-            
         }
     }
 }
